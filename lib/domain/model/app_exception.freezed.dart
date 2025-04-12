@@ -58,14 +58,12 @@ mixin _$AppException {
 
 /// @nodoc
 abstract class $AppExceptionCopyWith<$Res> {
-  factory $AppExceptionCopyWith(
-          AppException value, $Res Function(AppException) then) =
+  factory $AppExceptionCopyWith(AppException value, $Res Function(AppException) then) =
       _$AppExceptionCopyWithImpl<$Res, AppException>;
 }
 
 /// @nodoc
-class _$AppExceptionCopyWithImpl<$Res, $Val extends AppException>
-    implements $AppExceptionCopyWith<$Res> {
+class _$AppExceptionCopyWithImpl<$Res, $Val extends AppException> implements $AppExceptionCopyWith<$Res> {
   _$AppExceptionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -79,8 +77,8 @@ class _$AppExceptionCopyWithImpl<$Res, $Val extends AppException>
 
 /// @nodoc
 abstract class _$$CryptoListFetchErrorImplCopyWith<$Res> {
-  factory _$$CryptoListFetchErrorImplCopyWith(_$CryptoListFetchErrorImpl value,
-          $Res Function(_$CryptoListFetchErrorImpl) then) =
+  factory _$$CryptoListFetchErrorImplCopyWith(
+          _$CryptoListFetchErrorImpl value, $Res Function(_$CryptoListFetchErrorImpl) then) =
       __$$CryptoListFetchErrorImplCopyWithImpl<$Res>;
 }
 
@@ -88,8 +86,8 @@ abstract class _$$CryptoListFetchErrorImplCopyWith<$Res> {
 class __$$CryptoListFetchErrorImplCopyWithImpl<$Res>
     extends _$AppExceptionCopyWithImpl<$Res, _$CryptoListFetchErrorImpl>
     implements _$$CryptoListFetchErrorImplCopyWith<$Res> {
-  __$$CryptoListFetchErrorImplCopyWithImpl(_$CryptoListFetchErrorImpl _value,
-      $Res Function(_$CryptoListFetchErrorImpl) _then)
+  __$$CryptoListFetchErrorImplCopyWithImpl(
+      _$CryptoListFetchErrorImpl _value, $Res Function(_$CryptoListFetchErrorImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AppException
@@ -108,9 +106,7 @@ class _$CryptoListFetchErrorImpl implements CryptoListFetchError {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CryptoListFetchErrorImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$CryptoListFetchErrorImpl);
   }
 
   @override
@@ -185,17 +181,14 @@ abstract class CryptoListFetchError implements AppException {
 
 /// @nodoc
 abstract class _$$UnknownErrorImplCopyWith<$Res> {
-  factory _$$UnknownErrorImplCopyWith(
-          _$UnknownErrorImpl value, $Res Function(_$UnknownErrorImpl) then) =
+  factory _$$UnknownErrorImplCopyWith(_$UnknownErrorImpl value, $Res Function(_$UnknownErrorImpl) then) =
       __$$UnknownErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UnknownErrorImplCopyWithImpl<$Res>
-    extends _$AppExceptionCopyWithImpl<$Res, _$UnknownErrorImpl>
+class __$$UnknownErrorImplCopyWithImpl<$Res> extends _$AppExceptionCopyWithImpl<$Res, _$UnknownErrorImpl>
     implements _$$UnknownErrorImplCopyWith<$Res> {
-  __$$UnknownErrorImplCopyWithImpl(
-      _$UnknownErrorImpl _value, $Res Function(_$UnknownErrorImpl) _then)
+  __$$UnknownErrorImplCopyWithImpl(_$UnknownErrorImpl _value, $Res Function(_$UnknownErrorImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AppException
@@ -214,8 +207,7 @@ class _$UnknownErrorImpl implements UnknownError {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UnknownErrorImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UnknownErrorImpl);
   }
 
   @override

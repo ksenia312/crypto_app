@@ -1,5 +1,6 @@
 import 'package:crypto_app/features/home/cubit/home_cubit.dart';
 import 'package:crypto_app/features/home/cubit/home_state.dart';
+import 'package:crypto_app/shared/components/coin_list_tile.dart';
 import 'package:crypto_app/shared/state/app_state.dart';
 import 'package:crypto_app/shared/ui/errors/error_text_generator.dart';
 import 'package:flutter/material.dart';
@@ -19,17 +20,18 @@ class HomeScreen extends StatelessWidget {
           builder: (context, state) {
             return state.when(
               loading: (_) => Center(child: CircularProgressIndicator.adaptive()),
-              data: (data) => ListView(
-                shrinkWrap: true,
-                children: [
-                  ...data.coins.map(
-                    (e) => ListTile(
-                      title: Text(e.name ?? 'Unknown name'),
-                    ),
-                  ),
-                ],
-              ),
               error: (e, _) => Center(child: Text(ErrorTextGenerator.generate(e))),
+              data: (data) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+                child: ListView.separated(
+                  shrinkWrap: true,
+                  itemCount: data.coins.length,
+                  separatorBuilder: (context, index) => SizedBox(height: 12),
+                  itemBuilder: (context, index) {
+                    return CoinListTile(coin: data.coins[index]);
+                  },
+                ),
+              ),
             );
           },
         ),

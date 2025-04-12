@@ -21,22 +21,19 @@ mixin _$HomeAppState {
   /// Create a copy of HomeAppState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $HomeAppStateCopyWith<HomeAppState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $HomeAppStateCopyWith<HomeAppState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HomeAppStateCopyWith<$Res> {
-  factory $HomeAppStateCopyWith(
-          HomeAppState value, $Res Function(HomeAppState) then) =
+  factory $HomeAppStateCopyWith(HomeAppState value, $Res Function(HomeAppState) then) =
       _$HomeAppStateCopyWithImpl<$Res, HomeAppState>;
   @useResult
   $Res call({List<CoinEntity> coins});
 }
 
 /// @nodoc
-class _$HomeAppStateCopyWithImpl<$Res, $Val extends HomeAppState>
-    implements $HomeAppStateCopyWith<$Res> {
+class _$HomeAppStateCopyWithImpl<$Res, $Val extends HomeAppState> implements $HomeAppStateCopyWith<$Res> {
   _$HomeAppStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -61,10 +58,8 @@ class _$HomeAppStateCopyWithImpl<$Res, $Val extends HomeAppState>
 }
 
 /// @nodoc
-abstract class _$$HomeAppStateImplCopyWith<$Res>
-    implements $HomeAppStateCopyWith<$Res> {
-  factory _$$HomeAppStateImplCopyWith(
-          _$HomeAppStateImpl value, $Res Function(_$HomeAppStateImpl) then) =
+abstract class _$$HomeAppStateImplCopyWith<$Res> implements $HomeAppStateCopyWith<$Res> {
+  factory _$$HomeAppStateImplCopyWith(_$HomeAppStateImpl value, $Res Function(_$HomeAppStateImpl) then) =
       __$$HomeAppStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -72,11 +67,9 @@ abstract class _$$HomeAppStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$HomeAppStateImplCopyWithImpl<$Res>
-    extends _$HomeAppStateCopyWithImpl<$Res, _$HomeAppStateImpl>
+class __$$HomeAppStateImplCopyWithImpl<$Res> extends _$HomeAppStateCopyWithImpl<$Res, _$HomeAppStateImpl>
     implements _$$HomeAppStateImplCopyWith<$Res> {
-  __$$HomeAppStateImplCopyWithImpl(
-      _$HomeAppStateImpl _value, $Res Function(_$HomeAppStateImpl) _then)
+  __$$HomeAppStateImplCopyWithImpl(_$HomeAppStateImpl _value, $Res Function(_$HomeAppStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeAppState
@@ -98,8 +91,7 @@ class __$$HomeAppStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeAppStateImpl implements _HomeAppState {
-  const _$HomeAppStateImpl({required final List<CoinEntity> coins})
-      : _coins = coins;
+  const _$HomeAppStateImpl({required final List<CoinEntity> coins}) : _coins = coins;
 
   final List<CoinEntity> _coins;
   @override
@@ -123,8 +115,7 @@ class _$HomeAppStateImpl implements _HomeAppState {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_coins));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_coins));
 
   /// Create a copy of HomeAppState
   /// with the given fields replaced by the non-null parameter values.
@@ -136,8 +127,7 @@ class _$HomeAppStateImpl implements _HomeAppState {
 }
 
 abstract class _HomeAppState implements HomeAppState {
-  const factory _HomeAppState({required final List<CoinEntity> coins}) =
-      _$HomeAppStateImpl;
+  const factory _HomeAppState({required final List<CoinEntity> coins}) = _$HomeAppStateImpl;
 
   @override
   List<CoinEntity> get coins;
@@ -146,6 +136,5 @@ abstract class _HomeAppState implements HomeAppState {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HomeAppStateImplCopyWith<_$HomeAppStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$HomeAppStateImplCopyWith<_$HomeAppStateImpl> get copyWith => throw _privateConstructorUsedError;
 }
