@@ -45,7 +45,14 @@ class _HomeSearchState extends State<HomeSearch> {
           children: [
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Assets.search.svg(),
+              child: Assets.search.svg(
+                colorFilter: widget.isEnabled
+                    ? null
+                    : ColorFilter.mode(
+                        Theme.of(context).colorScheme.secondary,
+                        BlendMode.srcIn,
+                      ),
+              ),
             ),
             Expanded(
               child: TextFormField(
@@ -53,8 +60,8 @@ class _HomeSearchState extends State<HomeSearch> {
                 focusNode: _focusNode,
                 enabled: widget.isEnabled,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
                 decoration: InputDecoration(
                   isDense: false,
                   hintText: Strings.value('Search...'),

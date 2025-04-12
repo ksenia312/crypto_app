@@ -64,12 +64,14 @@ mixin _$AsyncState<T> {
 
 /// @nodoc
 abstract class $AsyncStateCopyWith<T, $Res> {
-  factory $AsyncStateCopyWith(AsyncState<T> value, $Res Function(AsyncState<T>) then) =
+  factory $AsyncStateCopyWith(
+          AsyncState<T> value, $Res Function(AsyncState<T>) then) =
       _$AsyncStateCopyWithImpl<T, $Res, AsyncState<T>>;
 }
 
 /// @nodoc
-class _$AsyncStateCopyWithImpl<T, $Res, $Val extends AsyncState<T>> implements $AsyncStateCopyWith<T, $Res> {
+class _$AsyncStateCopyWithImpl<T, $Res, $Val extends AsyncState<T>>
+    implements $AsyncStateCopyWith<T, $Res> {
   _$AsyncStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -83,16 +85,19 @@ class _$AsyncStateCopyWithImpl<T, $Res, $Val extends AsyncState<T>> implements $
 
 /// @nodoc
 abstract class _$$LoadingStateImplCopyWith<T, $Res> {
-  factory _$$LoadingStateImplCopyWith(_$LoadingStateImpl<T> value, $Res Function(_$LoadingStateImpl<T>) then) =
+  factory _$$LoadingStateImplCopyWith(_$LoadingStateImpl<T> value,
+          $Res Function(_$LoadingStateImpl<T>) then) =
       __$$LoadingStateImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T? lastData});
 }
 
 /// @nodoc
-class __$$LoadingStateImplCopyWithImpl<T, $Res> extends _$AsyncStateCopyWithImpl<T, $Res, _$LoadingStateImpl<T>>
+class __$$LoadingStateImplCopyWithImpl<T, $Res>
+    extends _$AsyncStateCopyWithImpl<T, $Res, _$LoadingStateImpl<T>>
     implements _$$LoadingStateImplCopyWith<T, $Res> {
-  __$$LoadingStateImplCopyWithImpl(_$LoadingStateImpl<T> _value, $Res Function(_$LoadingStateImpl<T>) _then)
+  __$$LoadingStateImplCopyWithImpl(
+      _$LoadingStateImpl<T> _value, $Res Function(_$LoadingStateImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of AsyncState
@@ -133,7 +138,8 @@ class _$LoadingStateImpl<T> implements LoadingState<T> {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(lastData));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(lastData));
 
   /// Create a copy of AsyncState
   /// with the given fields replaced by the non-null parameter values.
@@ -141,7 +147,8 @@ class _$LoadingStateImpl<T> implements LoadingState<T> {
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingStateImplCopyWith<T, _$LoadingStateImpl<T>> get copyWith =>
-      __$$LoadingStateImplCopyWithImpl<T, _$LoadingStateImpl<T>>(this, _$identity);
+      __$$LoadingStateImplCopyWithImpl<T, _$LoadingStateImpl<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -220,21 +227,25 @@ abstract class LoadingState<T> implements AsyncState<T> {
   /// Create a copy of AsyncState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoadingStateImplCopyWith<T, _$LoadingStateImpl<T>> get copyWith => throw _privateConstructorUsedError;
+  _$$LoadingStateImplCopyWith<T, _$LoadingStateImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$DataStateImplCopyWith<T, $Res> {
-  factory _$$DataStateImplCopyWith(_$DataStateImpl<T> value, $Res Function(_$DataStateImpl<T>) then) =
+  factory _$$DataStateImplCopyWith(
+          _$DataStateImpl<T> value, $Res Function(_$DataStateImpl<T>) then) =
       __$$DataStateImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$DataStateImplCopyWithImpl<T, $Res> extends _$AsyncStateCopyWithImpl<T, $Res, _$DataStateImpl<T>>
+class __$$DataStateImplCopyWithImpl<T, $Res>
+    extends _$AsyncStateCopyWithImpl<T, $Res, _$DataStateImpl<T>>
     implements _$$DataStateImplCopyWith<T, $Res> {
-  __$$DataStateImplCopyWithImpl(_$DataStateImpl<T> _value, $Res Function(_$DataStateImpl<T>) _then)
+  __$$DataStateImplCopyWithImpl(
+      _$DataStateImpl<T> _value, $Res Function(_$DataStateImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of AsyncState
@@ -275,7 +286,8 @@ class _$DataStateImpl<T> implements DataState<T> {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
   /// Create a copy of AsyncState
   /// with the given fields replaced by the non-null parameter values.
@@ -362,12 +374,14 @@ abstract class DataState<T> implements AsyncState<T> {
   /// Create a copy of AsyncState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DataStateImplCopyWith<T, _$DataStateImpl<T>> get copyWith => throw _privateConstructorUsedError;
+  _$$DataStateImplCopyWith<T, _$DataStateImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ErrorStateImplCopyWith<T, $Res> {
-  factory _$$ErrorStateImplCopyWith(_$ErrorStateImpl<T> value, $Res Function(_$ErrorStateImpl<T>) then) =
+  factory _$$ErrorStateImplCopyWith(
+          _$ErrorStateImpl<T> value, $Res Function(_$ErrorStateImpl<T>) then) =
       __$$ErrorStateImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({AppException error, T? lastData});
@@ -376,9 +390,11 @@ abstract class _$$ErrorStateImplCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class __$$ErrorStateImplCopyWithImpl<T, $Res> extends _$AsyncStateCopyWithImpl<T, $Res, _$ErrorStateImpl<T>>
+class __$$ErrorStateImplCopyWithImpl<T, $Res>
+    extends _$AsyncStateCopyWithImpl<T, $Res, _$ErrorStateImpl<T>>
     implements _$$ErrorStateImplCopyWith<T, $Res> {
-  __$$ErrorStateImplCopyWithImpl(_$ErrorStateImpl<T> _value, $Res Function(_$ErrorStateImpl<T>) _then)
+  __$$ErrorStateImplCopyWithImpl(
+      _$ErrorStateImpl<T> _value, $Res Function(_$ErrorStateImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of AsyncState
@@ -437,7 +453,8 @@ class _$ErrorStateImpl<T> implements ErrorState<T> {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, error, const DeepCollectionEquality().hash(lastData));
+  int get hashCode => Object.hash(
+      runtimeType, error, const DeepCollectionEquality().hash(lastData));
 
   /// Create a copy of AsyncState
   /// with the given fields replaced by the non-null parameter values.
@@ -517,7 +534,8 @@ class _$ErrorStateImpl<T> implements ErrorState<T> {
 }
 
 abstract class ErrorState<T> implements AsyncState<T> {
-  const factory ErrorState(final AppException error, [final T? lastData]) = _$ErrorStateImpl<T>;
+  const factory ErrorState(final AppException error, [final T? lastData]) =
+      _$ErrorStateImpl<T>;
 
   AppException get error;
   T? get lastData;
@@ -525,5 +543,6 @@ abstract class ErrorState<T> implements AsyncState<T> {
   /// Create a copy of AsyncState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ErrorStateImplCopyWith<T, _$ErrorStateImpl<T>> get copyWith => throw _privateConstructorUsedError;
+  _$$ErrorStateImplCopyWith<T, _$ErrorStateImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

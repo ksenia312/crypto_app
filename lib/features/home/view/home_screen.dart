@@ -15,23 +15,39 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<HomeCubit>(
       create: (_) => GetIt.instance()..refresh(),
-      child: Scaffold(
-        appBar: HomeAppBar(),
-        body: Builder(builder: (context) {
-          return RefreshIndicator(
+      child: Builder(builder: (context) {
+        return Scaffold(
+          appBar: HomeAppBar(),
+          body: RefreshIndicator(
             onRefresh: context.read<HomeCubit>().refresh,
-            child: BlocBuilder<HomeCubit, AsyncState<HomeAppState>>(
-              builder: (context, state) {
-                return state.when(
-                  loading: (_) => Center(child: CircularProgressIndicator.adaptive()),
-                  error: (e, _) => HomeErrorView(e: e),
-                  data: (data) => HomeSuccessView(data: data),
-                );
-              },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12,
+                vertical: 16,
+              ),
+              child: CustomScrollView(
+                slivers: [
+                  BlocBuilder<HomeCubit, AsyncState<HomeAppState>>(
+                    builder: (context, state) {
+                      return state.when(
+                        loading: (_) => SliverFillRemaining(
+                          child: Center(child: CircularProgressIndicator.adaptive()),
+                        ),
+                        error: (e, _) => SliverFillRemaining(
+                          child: HomeErrorView(e: e),
+                        ),
+                        data: (data) => SliverToBoxAdapter(
+                          child: HomeSuccessView(data: data),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
-          );
-        }),
-      ),
+          ),
+        );
+      }),
     );
   }
 }

@@ -19,18 +19,21 @@ mixin _$AppException {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cryptoListFetchError,
+    required TResult Function() cryptoListTooManyRequests,
     required TResult Function() unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? cryptoListFetchError,
+    TResult? Function()? cryptoListTooManyRequests,
     TResult? Function()? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cryptoListFetchError,
+    TResult Function()? cryptoListTooManyRequests,
     TResult Function()? unknown,
     required TResult orElse(),
   }) =>
@@ -38,18 +41,24 @@ mixin _$AppException {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CryptoListFetchError value) cryptoListFetchError,
+    required TResult Function(CryptoListTooManyRequests value)
+        cryptoListTooManyRequests,
     required TResult Function(UnknownError value) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CryptoListFetchError value)? cryptoListFetchError,
+    TResult? Function(CryptoListTooManyRequests value)?
+        cryptoListTooManyRequests,
     TResult? Function(UnknownError value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CryptoListFetchError value)? cryptoListFetchError,
+    TResult Function(CryptoListTooManyRequests value)?
+        cryptoListTooManyRequests,
     TResult Function(UnknownError value)? unknown,
     required TResult orElse(),
   }) =>
@@ -58,12 +67,14 @@ mixin _$AppException {
 
 /// @nodoc
 abstract class $AppExceptionCopyWith<$Res> {
-  factory $AppExceptionCopyWith(AppException value, $Res Function(AppException) then) =
+  factory $AppExceptionCopyWith(
+          AppException value, $Res Function(AppException) then) =
       _$AppExceptionCopyWithImpl<$Res, AppException>;
 }
 
 /// @nodoc
-class _$AppExceptionCopyWithImpl<$Res, $Val extends AppException> implements $AppExceptionCopyWith<$Res> {
+class _$AppExceptionCopyWithImpl<$Res, $Val extends AppException>
+    implements $AppExceptionCopyWith<$Res> {
   _$AppExceptionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -77,8 +88,8 @@ class _$AppExceptionCopyWithImpl<$Res, $Val extends AppException> implements $Ap
 
 /// @nodoc
 abstract class _$$CryptoListFetchErrorImplCopyWith<$Res> {
-  factory _$$CryptoListFetchErrorImplCopyWith(
-          _$CryptoListFetchErrorImpl value, $Res Function(_$CryptoListFetchErrorImpl) then) =
+  factory _$$CryptoListFetchErrorImplCopyWith(_$CryptoListFetchErrorImpl value,
+          $Res Function(_$CryptoListFetchErrorImpl) then) =
       __$$CryptoListFetchErrorImplCopyWithImpl<$Res>;
 }
 
@@ -86,8 +97,8 @@ abstract class _$$CryptoListFetchErrorImplCopyWith<$Res> {
 class __$$CryptoListFetchErrorImplCopyWithImpl<$Res>
     extends _$AppExceptionCopyWithImpl<$Res, _$CryptoListFetchErrorImpl>
     implements _$$CryptoListFetchErrorImplCopyWith<$Res> {
-  __$$CryptoListFetchErrorImplCopyWithImpl(
-      _$CryptoListFetchErrorImpl _value, $Res Function(_$CryptoListFetchErrorImpl) _then)
+  __$$CryptoListFetchErrorImplCopyWithImpl(_$CryptoListFetchErrorImpl _value,
+      $Res Function(_$CryptoListFetchErrorImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AppException
@@ -106,7 +117,9 @@ class _$CryptoListFetchErrorImpl implements CryptoListFetchError {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$CryptoListFetchErrorImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CryptoListFetchErrorImpl);
   }
 
   @override
@@ -116,6 +129,7 @@ class _$CryptoListFetchErrorImpl implements CryptoListFetchError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cryptoListFetchError,
+    required TResult Function() cryptoListTooManyRequests,
     required TResult Function() unknown,
   }) {
     return cryptoListFetchError();
@@ -125,6 +139,7 @@ class _$CryptoListFetchErrorImpl implements CryptoListFetchError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? cryptoListFetchError,
+    TResult? Function()? cryptoListTooManyRequests,
     TResult? Function()? unknown,
   }) {
     return cryptoListFetchError?.call();
@@ -134,6 +149,7 @@ class _$CryptoListFetchErrorImpl implements CryptoListFetchError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cryptoListFetchError,
+    TResult Function()? cryptoListTooManyRequests,
     TResult Function()? unknown,
     required TResult orElse(),
   }) {
@@ -147,6 +163,8 @@ class _$CryptoListFetchErrorImpl implements CryptoListFetchError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CryptoListFetchError value) cryptoListFetchError,
+    required TResult Function(CryptoListTooManyRequests value)
+        cryptoListTooManyRequests,
     required TResult Function(UnknownError value) unknown,
   }) {
     return cryptoListFetchError(this);
@@ -156,6 +174,8 @@ class _$CryptoListFetchErrorImpl implements CryptoListFetchError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CryptoListFetchError value)? cryptoListFetchError,
+    TResult? Function(CryptoListTooManyRequests value)?
+        cryptoListTooManyRequests,
     TResult? Function(UnknownError value)? unknown,
   }) {
     return cryptoListFetchError?.call(this);
@@ -165,6 +185,8 @@ class _$CryptoListFetchErrorImpl implements CryptoListFetchError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CryptoListFetchError value)? cryptoListFetchError,
+    TResult Function(CryptoListTooManyRequests value)?
+        cryptoListTooManyRequests,
     TResult Function(UnknownError value)? unknown,
     required TResult orElse(),
   }) {
@@ -180,15 +202,135 @@ abstract class CryptoListFetchError implements AppException {
 }
 
 /// @nodoc
+abstract class _$$CryptoListTooManyRequestsImplCopyWith<$Res> {
+  factory _$$CryptoListTooManyRequestsImplCopyWith(
+          _$CryptoListTooManyRequestsImpl value,
+          $Res Function(_$CryptoListTooManyRequestsImpl) then) =
+      __$$CryptoListTooManyRequestsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CryptoListTooManyRequestsImplCopyWithImpl<$Res>
+    extends _$AppExceptionCopyWithImpl<$Res, _$CryptoListTooManyRequestsImpl>
+    implements _$$CryptoListTooManyRequestsImplCopyWith<$Res> {
+  __$$CryptoListTooManyRequestsImplCopyWithImpl(
+      _$CryptoListTooManyRequestsImpl _value,
+      $Res Function(_$CryptoListTooManyRequestsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppException
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CryptoListTooManyRequestsImpl implements CryptoListTooManyRequests {
+  const _$CryptoListTooManyRequestsImpl();
+
+  @override
+  String toString() {
+    return 'AppException.cryptoListTooManyRequests()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CryptoListTooManyRequestsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cryptoListFetchError,
+    required TResult Function() cryptoListTooManyRequests,
+    required TResult Function() unknown,
+  }) {
+    return cryptoListTooManyRequests();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? cryptoListFetchError,
+    TResult? Function()? cryptoListTooManyRequests,
+    TResult? Function()? unknown,
+  }) {
+    return cryptoListTooManyRequests?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cryptoListFetchError,
+    TResult Function()? cryptoListTooManyRequests,
+    TResult Function()? unknown,
+    required TResult orElse(),
+  }) {
+    if (cryptoListTooManyRequests != null) {
+      return cryptoListTooManyRequests();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CryptoListFetchError value) cryptoListFetchError,
+    required TResult Function(CryptoListTooManyRequests value)
+        cryptoListTooManyRequests,
+    required TResult Function(UnknownError value) unknown,
+  }) {
+    return cryptoListTooManyRequests(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CryptoListFetchError value)? cryptoListFetchError,
+    TResult? Function(CryptoListTooManyRequests value)?
+        cryptoListTooManyRequests,
+    TResult? Function(UnknownError value)? unknown,
+  }) {
+    return cryptoListTooManyRequests?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CryptoListFetchError value)? cryptoListFetchError,
+    TResult Function(CryptoListTooManyRequests value)?
+        cryptoListTooManyRequests,
+    TResult Function(UnknownError value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (cryptoListTooManyRequests != null) {
+      return cryptoListTooManyRequests(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CryptoListTooManyRequests implements AppException {
+  const factory CryptoListTooManyRequests() = _$CryptoListTooManyRequestsImpl;
+}
+
+/// @nodoc
 abstract class _$$UnknownErrorImplCopyWith<$Res> {
-  factory _$$UnknownErrorImplCopyWith(_$UnknownErrorImpl value, $Res Function(_$UnknownErrorImpl) then) =
+  factory _$$UnknownErrorImplCopyWith(
+          _$UnknownErrorImpl value, $Res Function(_$UnknownErrorImpl) then) =
       __$$UnknownErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UnknownErrorImplCopyWithImpl<$Res> extends _$AppExceptionCopyWithImpl<$Res, _$UnknownErrorImpl>
+class __$$UnknownErrorImplCopyWithImpl<$Res>
+    extends _$AppExceptionCopyWithImpl<$Res, _$UnknownErrorImpl>
     implements _$$UnknownErrorImplCopyWith<$Res> {
-  __$$UnknownErrorImplCopyWithImpl(_$UnknownErrorImpl _value, $Res Function(_$UnknownErrorImpl) _then)
+  __$$UnknownErrorImplCopyWithImpl(
+      _$UnknownErrorImpl _value, $Res Function(_$UnknownErrorImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AppException
@@ -207,7 +349,8 @@ class _$UnknownErrorImpl implements UnknownError {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UnknownErrorImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UnknownErrorImpl);
   }
 
   @override
@@ -217,6 +360,7 @@ class _$UnknownErrorImpl implements UnknownError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cryptoListFetchError,
+    required TResult Function() cryptoListTooManyRequests,
     required TResult Function() unknown,
   }) {
     return unknown();
@@ -226,6 +370,7 @@ class _$UnknownErrorImpl implements UnknownError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? cryptoListFetchError,
+    TResult? Function()? cryptoListTooManyRequests,
     TResult? Function()? unknown,
   }) {
     return unknown?.call();
@@ -235,6 +380,7 @@ class _$UnknownErrorImpl implements UnknownError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cryptoListFetchError,
+    TResult Function()? cryptoListTooManyRequests,
     TResult Function()? unknown,
     required TResult orElse(),
   }) {
@@ -248,6 +394,8 @@ class _$UnknownErrorImpl implements UnknownError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CryptoListFetchError value) cryptoListFetchError,
+    required TResult Function(CryptoListTooManyRequests value)
+        cryptoListTooManyRequests,
     required TResult Function(UnknownError value) unknown,
   }) {
     return unknown(this);
@@ -257,6 +405,8 @@ class _$UnknownErrorImpl implements UnknownError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CryptoListFetchError value)? cryptoListFetchError,
+    TResult? Function(CryptoListTooManyRequests value)?
+        cryptoListTooManyRequests,
     TResult? Function(UnknownError value)? unknown,
   }) {
     return unknown?.call(this);
@@ -266,6 +416,8 @@ class _$UnknownErrorImpl implements UnknownError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CryptoListFetchError value)? cryptoListFetchError,
+    TResult Function(CryptoListTooManyRequests value)?
+        cryptoListTooManyRequests,
     TResult Function(UnknownError value)? unknown,
     required TResult orElse(),
   }) {

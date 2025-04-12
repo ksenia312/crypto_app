@@ -12,7 +12,11 @@ class CoinListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    final colorScheme = Theme.of(context).colorScheme;
     return ListTile(
+      titleTextStyle: textTheme.headlineSmall?.copyWith(color: colorScheme.onPrimary),
+      subtitleTextStyle: textTheme.bodySmall?.copyWith(color: colorScheme.onSurface),
       leading: CoinImage(url: coin.image),
       title: Text(coin.name ?? Strings.value('Unknown name')),
       subtitle: Text(coin.symbol?.toUpperCase() ?? Strings.value('???')),

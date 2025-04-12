@@ -18,10 +18,27 @@ class Assets {
   static const SvgGenImage arrowDown = SvgGenImage('assets/arrow_down.svg');
   static const SvgGenImage arrowUp = SvgGenImage('assets/arrow_up.svg');
   static const SvgGenImage cross = SvgGenImage('assets/cross.svg');
+  static const SvgGenImage homeFilled = SvgGenImage('assets/home_filled.svg');
+  static const SvgGenImage homeOutlined = SvgGenImage('assets/home_outlined.svg');
+  static const SvgGenImage lightMode = SvgGenImage('assets/light_mode.svg');
+  static const SvgGenImage nightMode = SvgGenImage('assets/night_mode.svg');
+  static const SvgGenImage profileFilled = SvgGenImage('assets/profile_filled.svg');
+  static const SvgGenImage profileOutlined = SvgGenImage('assets/profile_outlined.svg');
   static const SvgGenImage search = SvgGenImage('assets/search.svg');
 
   /// List of all assets
-  static List<SvgGenImage> get values => [arrowDown, arrowUp, cross, search];
+  static List<SvgGenImage> get values => [
+    arrowDown,
+    arrowUp,
+    cross,
+    homeFilled,
+    homeOutlined,
+    lightMode,
+    nightMode,
+    profileFilled,
+    profileOutlined,
+    search,
+  ];
 }
 
 class SvgGenImage {

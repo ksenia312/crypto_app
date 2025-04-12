@@ -36,22 +36,14 @@ class CoinsRepositoryImpl extends CoinsRepository {
             (e) => CoinEntity.fromJson(e as Map<String, dynamic>),
           ),
         ];
+      } else if (response.statusCode == 429) {
+        throw AppException.cryptoListTooManyRequests();
+      } else {
+        throw AppException.cryptoListFetchError();
       }
-      throw AppException.cryptoListFetchError();
     } catch (e) {
       throw AppException.cryptoListFetchError();
     }
   }
 
-  @override
-  Future<List<CoinEntity>> fetchList({
-    int page = _defaultPage,
-    int size = _defaultSize,
-    Currency currency = _defaultCurrency,
-    FetchOrder order = _defaultOrder,
-    bool sparkline = _defaultSparkline,
-  }) async {
-    // TODO: implement fetchList
-    return [];
-  }
 }
