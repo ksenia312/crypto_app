@@ -17,7 +17,6 @@ class HomeCubit extends Cubit<AsyncState<HomeAppState>> {
       emit(AsyncState.loading());
 
       final coins = await cryptoRepository.fetchTopCryptocurrencies();
-
       emit(AsyncState.data(HomeAppState(coins: coins)));
     } on AppException catch (e) {
       emit(AsyncState.error(e));
@@ -25,4 +24,6 @@ class HomeCubit extends Cubit<AsyncState<HomeAppState>> {
       emit(const AsyncState.error(AppException.unknown()));
     }
   }
+
+  Future<void> refresh() => init();
 }

@@ -55,8 +55,5 @@ class CoinLast24HoursPercentage extends StatelessWidget {
         )
       ],
     );
-    if (percentage == null) {
-      return Text('-');
-    }
   }
 }
