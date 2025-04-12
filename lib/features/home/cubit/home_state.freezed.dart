@@ -17,23 +17,31 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeAppState {
   List<CoinEntity> get coins => throw _privateConstructorUsedError;
+  List<CoinEntity> get filteredCoins => throw _privateConstructorUsedError;
+  String? get lastQuery => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeAppState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $HomeAppStateCopyWith<HomeAppState> get copyWith => throw _privateConstructorUsedError;
+  $HomeAppStateCopyWith<HomeAppState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HomeAppStateCopyWith<$Res> {
-  factory $HomeAppStateCopyWith(HomeAppState value, $Res Function(HomeAppState) then) =
+  factory $HomeAppStateCopyWith(
+          HomeAppState value, $Res Function(HomeAppState) then) =
       _$HomeAppStateCopyWithImpl<$Res, HomeAppState>;
   @useResult
-  $Res call({List<CoinEntity> coins});
+  $Res call(
+      {List<CoinEntity> coins,
+      List<CoinEntity> filteredCoins,
+      String? lastQuery});
 }
 
 /// @nodoc
-class _$HomeAppStateCopyWithImpl<$Res, $Val extends HomeAppState> implements $HomeAppStateCopyWith<$Res> {
+class _$HomeAppStateCopyWithImpl<$Res, $Val extends HomeAppState>
+    implements $HomeAppStateCopyWith<$Res> {
   _$HomeAppStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -47,29 +55,46 @@ class _$HomeAppStateCopyWithImpl<$Res, $Val extends HomeAppState> implements $Ho
   @override
   $Res call({
     Object? coins = null,
+    Object? filteredCoins = null,
+    Object? lastQuery = freezed,
   }) {
     return _then(_value.copyWith(
       coins: null == coins
           ? _value.coins
           : coins // ignore: cast_nullable_to_non_nullable
               as List<CoinEntity>,
+      filteredCoins: null == filteredCoins
+          ? _value.filteredCoins
+          : filteredCoins // ignore: cast_nullable_to_non_nullable
+              as List<CoinEntity>,
+      lastQuery: freezed == lastQuery
+          ? _value.lastQuery
+          : lastQuery // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$HomeAppStateImplCopyWith<$Res> implements $HomeAppStateCopyWith<$Res> {
-  factory _$$HomeAppStateImplCopyWith(_$HomeAppStateImpl value, $Res Function(_$HomeAppStateImpl) then) =
+abstract class _$$HomeAppStateImplCopyWith<$Res>
+    implements $HomeAppStateCopyWith<$Res> {
+  factory _$$HomeAppStateImplCopyWith(
+          _$HomeAppStateImpl value, $Res Function(_$HomeAppStateImpl) then) =
       __$$HomeAppStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<CoinEntity> coins});
+  $Res call(
+      {List<CoinEntity> coins,
+      List<CoinEntity> filteredCoins,
+      String? lastQuery});
 }
 
 /// @nodoc
-class __$$HomeAppStateImplCopyWithImpl<$Res> extends _$HomeAppStateCopyWithImpl<$Res, _$HomeAppStateImpl>
+class __$$HomeAppStateImplCopyWithImpl<$Res>
+    extends _$HomeAppStateCopyWithImpl<$Res, _$HomeAppStateImpl>
     implements _$$HomeAppStateImplCopyWith<$Res> {
-  __$$HomeAppStateImplCopyWithImpl(_$HomeAppStateImpl _value, $Res Function(_$HomeAppStateImpl) _then)
+  __$$HomeAppStateImplCopyWithImpl(
+      _$HomeAppStateImpl _value, $Res Function(_$HomeAppStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HomeAppState
@@ -78,12 +103,22 @@ class __$$HomeAppStateImplCopyWithImpl<$Res> extends _$HomeAppStateCopyWithImpl<
   @override
   $Res call({
     Object? coins = null,
+    Object? filteredCoins = null,
+    Object? lastQuery = freezed,
   }) {
     return _then(_$HomeAppStateImpl(
       coins: null == coins
           ? _value._coins
           : coins // ignore: cast_nullable_to_non_nullable
               as List<CoinEntity>,
+      filteredCoins: null == filteredCoins
+          ? _value._filteredCoins
+          : filteredCoins // ignore: cast_nullable_to_non_nullable
+              as List<CoinEntity>,
+      lastQuery: freezed == lastQuery
+          ? _value.lastQuery
+          : lastQuery // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -91,7 +126,12 @@ class __$$HomeAppStateImplCopyWithImpl<$Res> extends _$HomeAppStateCopyWithImpl<
 /// @nodoc
 
 class _$HomeAppStateImpl implements _HomeAppState {
-  const _$HomeAppStateImpl({required final List<CoinEntity> coins}) : _coins = coins;
+  const _$HomeAppStateImpl(
+      {required final List<CoinEntity> coins,
+      required final List<CoinEntity> filteredCoins,
+      this.lastQuery})
+      : _coins = coins,
+        _filteredCoins = filteredCoins;
 
   final List<CoinEntity> _coins;
   @override
@@ -101,9 +141,20 @@ class _$HomeAppStateImpl implements _HomeAppState {
     return EqualUnmodifiableListView(_coins);
   }
 
+  final List<CoinEntity> _filteredCoins;
+  @override
+  List<CoinEntity> get filteredCoins {
+    if (_filteredCoins is EqualUnmodifiableListView) return _filteredCoins;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_filteredCoins);
+  }
+
+  @override
+  final String? lastQuery;
+
   @override
   String toString() {
-    return 'HomeAppState(coins: $coins)';
+    return 'HomeAppState(coins: $coins, filteredCoins: $filteredCoins, lastQuery: $lastQuery)';
   }
 
   @override
@@ -111,11 +162,19 @@ class _$HomeAppStateImpl implements _HomeAppState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeAppStateImpl &&
-            const DeepCollectionEquality().equals(other._coins, _coins));
+            const DeepCollectionEquality().equals(other._coins, _coins) &&
+            const DeepCollectionEquality()
+                .equals(other._filteredCoins, _filteredCoins) &&
+            (identical(other.lastQuery, lastQuery) ||
+                other.lastQuery == lastQuery));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_coins));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_coins),
+      const DeepCollectionEquality().hash(_filteredCoins),
+      lastQuery);
 
   /// Create a copy of HomeAppState
   /// with the given fields replaced by the non-null parameter values.
@@ -127,14 +186,22 @@ class _$HomeAppStateImpl implements _HomeAppState {
 }
 
 abstract class _HomeAppState implements HomeAppState {
-  const factory _HomeAppState({required final List<CoinEntity> coins}) = _$HomeAppStateImpl;
+  const factory _HomeAppState(
+      {required final List<CoinEntity> coins,
+      required final List<CoinEntity> filteredCoins,
+      final String? lastQuery}) = _$HomeAppStateImpl;
 
   @override
   List<CoinEntity> get coins;
+  @override
+  List<CoinEntity> get filteredCoins;
+  @override
+  String? get lastQuery;
 
   /// Create a copy of HomeAppState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HomeAppStateImplCopyWith<_$HomeAppStateImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$HomeAppStateImplCopyWith<_$HomeAppStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

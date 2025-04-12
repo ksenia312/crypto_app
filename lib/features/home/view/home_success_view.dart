@@ -1,6 +1,6 @@
 import 'package:crypto_app/features/home/cubit/home_state.dart';
-import 'package:crypto_app/shared/components/coin_list_tile.dart';
 import 'package:crypto_app/shared/localization/strings.dart';
+import 'package:crypto_app/shared/ui/components/coin_list_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomeSuccessView extends StatelessWidget {
@@ -24,14 +24,22 @@ class HomeSuccessView extends StatelessWidget {
         children: [
           Text(
             Strings.value('Top cryptocurrencies'),
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
             textAlign: TextAlign.start,
           ),
-          ...data.coins.map(
-            (e) => CoinListTile(
-              coin: e,
+          if (data.filteredCoins.isNotEmpty)
+            ...data.filteredCoins.map(
+              (e) => CoinListTile(coin: e),
+            )
+          else
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 32),
+                child: Text('Nothing found'),
+              ),
             ),
-          ),
         ],
       ),
     );

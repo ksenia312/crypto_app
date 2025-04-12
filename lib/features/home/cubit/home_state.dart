@@ -7,5 +7,7 @@ part 'home_state.freezed.dart';
 class HomeAppState with _$HomeAppState {
   const factory HomeAppState({
     required List<CoinEntity> coins,
+    required List<CoinEntity> filteredCoins,
+    String? lastQuery,
   }) = _HomeAppState;
 }

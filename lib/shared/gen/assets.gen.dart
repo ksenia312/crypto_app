@@ -17,9 +17,11 @@ class Assets {
 
   static const SvgGenImage arrowDown = SvgGenImage('assets/arrow_down.svg');
   static const SvgGenImage arrowUp = SvgGenImage('assets/arrow_up.svg');
+  static const SvgGenImage cross = SvgGenImage('assets/cross.svg');
+  static const SvgGenImage search = SvgGenImage('assets/search.svg');
 
   /// List of all assets
-  static List<SvgGenImage> get values => [arrowDown, arrowUp];
+  static List<SvgGenImage> get values => [arrowDown, arrowUp, cross, search];
 }
 
 class SvgGenImage {

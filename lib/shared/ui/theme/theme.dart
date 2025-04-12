@@ -14,7 +14,7 @@ abstract class AppTheme {
       error: AppColors.red,
       onError: AppColors.white,
       surface: AppColors.black,
-      onSurface: AppColors.white,
+      onSurface: AppColors.gray,
     ),
     appBarTheme: AppBarTheme(
       foregroundColor: AppColors.lightBlue,
@@ -28,6 +28,17 @@ abstract class AppTheme {
       tileColor: AppColors.darkerGray,
       titleTextStyle: _textTheme.headlineSmall?.copyWith(color: AppColors.white),
       subtitleTextStyle: _textTheme.bodySmall?.copyWith(color: AppColors.gray),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      fillColor: AppColors.black,
+      border: InputBorder.none,
+      enabledBorder: InputBorder.none,
+      disabledBorder: InputBorder.none,
+      errorBorder: InputBorder.none,
+      focusedBorder: InputBorder.none,
+      focusedErrorBorder: InputBorder.none,
+      filled: true,
+      hintStyle: _textTheme.bodyLarge?.copyWith(color: AppColors.gray),
     ),
     textTheme: _textTheme,
   );
