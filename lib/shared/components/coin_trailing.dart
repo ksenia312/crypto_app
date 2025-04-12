@@ -1,4 +1,5 @@
 import 'package:crypto_app/domain/model/coin_entity.dart';
+import 'package:crypto_app/shared/extensions/double_extensions.dart';
 import 'package:crypto_app/shared/gen/assets.gen.dart';
 import 'package:crypto_app/shared/localization/strings.dart';
 import 'package:crypto_app/shared/ui/theme/colors.dart';
@@ -11,7 +12,7 @@ class CoinTrailing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final price = coinEntity.currentPrice?.toStringAsFixed(2);
+    final price = coinEntity.currentPrice?.toStringAsFixedIfNeeded(maxDigits: 4);
     final style = Theme.of(context).textTheme.bodyLarge?.copyWith(
           fontWeight: FontWeight.w800,
           color: Theme.of(context).colorScheme.onPrimary,
@@ -36,7 +37,7 @@ class CoinLast24HoursPercentage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final value = percentage;
-    final stringValue = value?.toStringAsFixed(2);
+    final stringValue = value?.toStringAsFixedIfNeeded(maxDigits: 3);
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -47,7 +48,7 @@ class CoinLast24HoursPercentage extends StatelessWidget {
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: value == null
                       ? Theme.of(context).colorScheme.onSurface
-                      : value > 0
+                      : value >= 0
                           ? AppColors.green
                           : AppColors.red,
                 ),

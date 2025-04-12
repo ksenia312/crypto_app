@@ -14,11 +14,12 @@ abstract class AppTheme {
       error: AppColors.red,
       onError: AppColors.white,
       surface: AppColors.black,
-      onSurface: AppColors.lightBlue,
+      onSurface: AppColors.white,
     ),
     appBarTheme: AppBarTheme(
       foregroundColor: AppColors.lightBlue,
       backgroundColor: AppColors.darkGray,
+      surfaceTintColor: Colors.transparent,
     ),
     listTileTheme: ListTileThemeData(
       shape: BeveledRectangleBorder(
