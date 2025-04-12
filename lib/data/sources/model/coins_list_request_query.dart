@@ -18,13 +18,13 @@ class CoinsListRequestQuery extends AppRequestQuery {
   final bool sparkline;
 
   @override
-  Map<String, dynamic> toParams() {
+  Map<String, String> toParams() {
     return {
-      'page': page,
-      'size': size,
-      'currency': currency.apiValue,
+      'page': '$page',
+      'per_page': '$size',
+      'vs_currency': currency.apiValue,
       'order': order.apiValue,
-      'sparkline': sparkline,
+      'sparkline': '$sparkline',
     };
   }
 }

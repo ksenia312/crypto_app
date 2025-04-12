@@ -10,11 +10,11 @@ class CryptoApiSource {
   final Map<String, String> auth;
 
   Future<http.Response> fetchList({
-    int page = 1,
-    int size = 10,
-    Currency currency = Currency.usd,
-    FetchOrder order = FetchOrder.marketCapDesc,
-    bool sparkline = false,
+    required int page,
+    required int size,
+    required Currency currency,
+    required FetchOrder order,
+    required bool sparkline,
   }) {
     final body = CoinsListRequestQuery(
       currency: currency,
@@ -23,6 +23,9 @@ class CryptoApiSource {
       size: size,
       sparkline: sparkline,
     );
-    return http.get(Uri.https(url, '/v3/coins/markets', body.toParams()), headers: auth);
+    return http.get(
+      Uri.https(url, 'api/v3/coins/markets', body.toParams()),
+      headers: auth,
+    );
   }
 }

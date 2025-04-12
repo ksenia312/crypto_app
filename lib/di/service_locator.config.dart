@@ -14,6 +14,7 @@ import 'package:crypto_app/data/repositories/coins_repository_impl.dart'
 import 'package:crypto_app/data/sources/crypto_api_source.dart' as _i238;
 import 'package:crypto_app/di/modules/crypto_source_module.dart' as _i200;
 import 'package:crypto_app/domain/interface/coins_repository.dart' as _i682;
+import 'package:crypto_app/features/home/cubit/home_cubit.dart' as _i63;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -33,6 +34,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => cryptoSourceModule.cryptoApiSource);
     gh.factory<_i682.CoinsRepository>(
         () => _i412.CoinsRepositoryImpl(gh<_i238.CryptoApiSource>()));
+    gh.factory<_i63.HomeCubit>(
+        () => _i63.HomeCubit(gh<_i682.CoinsRepository>()));
     return this;
   }
 }
