@@ -39,7 +39,7 @@ Find the MP4 in `demo/`
 2. Add your API key from the platform https://api.coingecko.com/:
 ```
 CRYPTO_API_KEY=""
-CRYPTO_BASE_URL="api.coingecko.com
+CRYPTO_BASE_URL="api.coingecko.com"
 ```
 3. Figure out the flutter version
     - **Option 1:**
