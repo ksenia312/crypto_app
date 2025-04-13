@@ -6,7 +6,8 @@
 
 Find the MP4 in `demo/`
 
-![IOS](demo/ios.gif) ![Android](demo/android.gif)
+![IOS](demo/ios.gif)
+![Android](demo/android.gif)
 
 ## Features
 
