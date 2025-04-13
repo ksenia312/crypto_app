@@ -4,10 +4,9 @@
 
 ## Demo
 
-Find the MP4 in `demo/`
+> **Find the MP4 and APK files in `demo/`**
 
-![IOS](demo/ios.gif)
-![Android](demo/android.gif)
+![IOS](demo/ios.gif) ![Android](demo/android.gif)
 
 ## Features
 
