@@ -17,6 +17,7 @@ class Assets {
 
   static const SvgGenImage arrowDown = SvgGenImage('assets/arrow_down.svg');
   static const SvgGenImage arrowUp = SvgGenImage('assets/arrow_up.svg');
+  static const SvgGenImage arrowUpDark = SvgGenImage('assets/arrow_up_dark.svg');
   static const SvgGenImage cross = SvgGenImage('assets/cross.svg');
   static const SvgGenImage homeFilled = SvgGenImage('assets/home_filled.svg');
   static const SvgGenImage homeOutlined = SvgGenImage('assets/home_outlined.svg');
@@ -30,6 +31,7 @@ class Assets {
   static List<SvgGenImage> get values => [
     arrowDown,
     arrowUp,
+    arrowUpDark,
     cross,
     homeFilled,
     homeOutlined,

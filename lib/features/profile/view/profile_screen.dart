@@ -21,26 +21,28 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 24),
               ProfileHeader(),
               const SizedBox(height: 32),
-              BlocBuilder<ThemeCubit, ThemeState>(builder: (context, state) {
-                final isDark = state.map(
-                  light: (_) => false,
-                  dark: (_) => true,
-                  notSet: (_) => Theme.of(context).brightness == Brightness.dark,
-                );
-                return ListTile(
-                  title: Text(Strings.value('Theme')),
-                  trailing: ColorFiltered(
-                    colorFilter: ColorFilter.mode(
-                      Theme.of(context).colorScheme.onPrimary,
-                      BlendMode.srcATop,
+              BlocBuilder<ThemeCubit, ThemeState>(
+                builder: (context, state) {
+                  final isDark = state.map(
+                    light: (_) => false,
+                    dark: (_) => true,
+                    notSet: (_) => Theme.of(context).brightness == Brightness.dark,
+                  );
+                  return ListTile(
+                    title: Text(Strings.value('Theme')),
+                    trailing: ColorFiltered(
+                      colorFilter: ColorFilter.mode(
+                        Theme.of(context).colorScheme.onPrimary,
+                        BlendMode.srcATop,
+                      ),
+                      child: isDark ? Assets.nightMode.svg() : Assets.lightMode.svg(),
                     ),
-                    child: isDark ? Assets.nightMode.svg() : Assets.lightMode.svg(),
-                  ),
-                  onTap: () {
-                    context.read<ThemeCubit>().setDark(isDark: !isDark);
-                  },
-                );
-              }),
+                    onTap: () {
+                      context.read<ThemeCubit>().setDark(isDark: !isDark);
+                    },
+                  );
+                },
+              ),
             ],
           ),
         ),

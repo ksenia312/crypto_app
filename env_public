@@ -1,2 +1,2 @@
 CRYPTO_API_KEY=""
-CRYPTO_BASE_URL=""
+CRYPTO_BASE_URL="api.coingecko.com"

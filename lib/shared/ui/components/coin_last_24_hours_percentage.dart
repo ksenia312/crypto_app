@@ -1,7 +1,6 @@
 import 'package:crypto_app/shared/extensions/double_extensions.dart';
 import 'package:crypto_app/shared/gen/assets.gen.dart';
 import 'package:crypto_app/shared/localization/strings.dart';
-import 'package:crypto_app/shared/ui/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class CoinLast24HoursPercentage extends StatelessWidget {
@@ -25,12 +24,14 @@ class CoinLast24HoursPercentage extends StatelessWidget {
     final accentColor = value == null
         ? colorScheme.onPrimary
         : value >= 0
-            ? AppColors.green
-            : AppColors.red;
+            ? colorScheme.tertiary
+            : colorScheme.error;
+    final isDarkTheme = colorScheme.brightness == Brightness.dark;
+    final upIcon = isDarkTheme ? Assets.arrowUp : Assets.arrowUpDark;
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (value == null) SizedBox.shrink() else if (value > 0) Assets.arrowUp.svg() else Assets.arrowDown.svg(),
+        if (value == null) SizedBox.shrink() else if (value > 0) upIcon.svg() else Assets.arrowDown.svg(),
         Flexible(
           child: RichText(
             text: TextSpan(

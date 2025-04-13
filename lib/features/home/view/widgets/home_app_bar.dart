@@ -12,20 +12,13 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Theme.of(context).appBarTheme.backgroundColor,
-      borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(20),
-        bottomRight: Radius.circular(20),
-      ),
-      child: BlocBuilder<HomeCubit, AsyncState<HomeAppState>>(
+    return AppBar(
+      toolbarHeight: kToolbarHeight + _indent * 3,
+      title: BlocBuilder<HomeCubit, AsyncState<HomeAppState>>(
         builder: (context, state) {
-          return Padding(
-            padding: EdgeInsets.fromLTRB(_indent, _indent * 3, _indent, _indent),
-            child: HomeSearch(
-              isEnabled: state is DataState,
-              onChanged: context.read<HomeCubit>().filter,
-            ),
+          return HomeSearch(
+            isEnabled: state is DataState,
+            onChanged: context.read<HomeCubit>().filter,
           );
         },
       ),

@@ -15,6 +15,7 @@ abstract class AppTheme {
       onError: AppColors.white,
       surface: AppColors.black,
       onSurface: AppColors.gray,
+      tertiary: AppColors.green,
     ),
     appBarTheme: AppBarTheme(
       foregroundColor: AppColors.lightBlue,
@@ -40,10 +41,11 @@ abstract class AppTheme {
       onError: AppColors.white,
       surface: AppColors.white,
       onSurface: AppColors.black,
+      tertiary: AppColors.darkGreen,
     ),
     appBarTheme: const AppBarTheme(
       foregroundColor: AppColors.lightBlue,
-      backgroundColor: AppColors.lighterBlue,
+      backgroundColor: AppColors.lightBlue,
       surfaceTintColor: Colors.transparent,
     ),
     listTileTheme: _listTheme(tileColor: AppColors.lighterBlue),
