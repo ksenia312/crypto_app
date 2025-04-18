@@ -6,8 +6,8 @@
 
 > **Find the MP4 and APK files in `demo/`**
 
-<img src="demo/ios.gif" alt="ios" width=400/>
-<img src="demo/android.gif" alt="android" width=400/>
+![ios](demo/ios.gif) ![android](demo/android.gif)
+
 
 ## Features
 
